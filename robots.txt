@@ -1,0 +1,3 @@
+User-Install_update: *
+Disallow:
+Sitemap: http://Mi.oneapm.com/sitemap.xml
