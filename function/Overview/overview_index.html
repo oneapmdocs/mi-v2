@@ -421,6 +421,23 @@
       </div>
     </div>-->
   </div>
+  <div class="panel panel-default">
+   <div class="panel-heading" role="tab" id="headingTwo">
+     <h4 class="panel-title">
+       <a href="/function/Hijacking/Hijacking_index.html " class="collapsed">
+         劫持分析
+       </a>
+     </h4>
+   </div>
+<!--   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+     <div class="panel-body">
+       <ul>
+         <li><a href="/function/event/event_errorInfo.html">错误信息</a></li>
+         <li><a href="/function/event/event_performanceProfiling.html">性能剖析</a></li>
+       </ul>
+     </div>
+   </div>-->
+ </div>
    <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
@@ -514,9 +531,12 @@
 
 <p>在应用列表点击任一应用默认跳转「总览」页面，该页面通过整合选定时间范围内影响用户体验的关键指标数据，展示 APP 整体性能体验概况及用户体验分布。</p>
 
-<p>该模块分为两部分：<br>
-* <a href="#1">用户体验总览区</a><br>
-* <a href="#2">用户体验影响分布区</a><br></p>
+<p>该模块分为两部分：</p>
+
+<ul>
+<li><a href="#1">用户体验总览区</a><br></li>
+<li><a href="#2">用户体验影响分布区</a><br></li>
+</ul>
 
 <h2><h2 id="1">用户体验总览区</h2></h2>
 
@@ -528,23 +548,27 @@ UEI 评分等级：<br>
         <tr>
             <th>  UEI 值 </th>
             <th>  用户体验评级 </th>
+            <th>  颜色标示     </th>
             <th>  备注 </th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td> （80-100）分 </td>
-            <td> 本次用户体验良好</td>
+            <td> 本次用户体验良好 </td>
+            <td> 绿 色 </td>
             <td> 未发现重大性能问题，用户体验较好 </td>
         </tr>
         <tr>
             <td>（60-80）分</td>
             <td>本次用户体验一般</td>
+            <td> 黄 色 </td>
             <td> 应用存在潜在风险影响用户体验，请持续关注APP性能</td>
         </tr>
         <tr>
             <td>（0-60）分</td>
             <td> 本次用户体验较差</td>
+            <td> 红 色 </td>
             <td> 应用出现一系列问题明显影响用户体验，请尽快排查 </td>
         </tr>
     </tbody>

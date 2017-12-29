@@ -412,7 +412,7 @@
 <p>打开功能目录下的 build.gradle 文件。
 <img src="/images/A11-001.jpg" alt="A11 001" />
 在 dependencies 模块中加入代码：</p>
-<div class="highlight"><pre class="highlight plaintext"><code>classpath 'com.oneapm.ruem.tools:android:5.1.0.0'
+<div class="highlight"><pre class="highlight plaintext"><code>classpath 'com.oneapm.ruem.tools:android:5.4.0.0'
 </code></pre></div>
 <p>代码示例如图：
 <img src="/images/A11-002.jpg" alt="A11 002" /></p>
@@ -472,19 +472,33 @@
 
 <p>本配置为可选项，如不进行配置，默认展示 DeviceID</p>
 
-<p>(1)如需配置用户信息 ，需要将解压的探针包中的 /lib/OneAPM_Agent.jar 作为 provide 添加进项目依赖</p>
+<p>(1)如需配置用户信息 ，需要将解压的探针包中的 <code>/lib/OneAPM_Agent.jar</code> 作为 provided 添加进项目依赖：在libs 同级目录创建 oneapm 文件夹，将 <code>OneAPM_Agent.jar</code> 复制到 oneapm 文件夹下在 build.gradle 文件中添加 <code>provided files(&#39;oneapm/OneAPM_Agent.jar&#39;)</code></p>
 
 <p>注意:此处不能为 compile 依赖</p>
 
 <p>(2)配置相关参数，在第一个 Activity 的 onCreate() 中配置对应的额外信息:</p>
-<div class="highlight"><pre class="highlight plaintext"><code> OneApmConfig.setUserName(String userName);//设置用户信息，作为展示的name
+<div class="highlight"><pre class="highlight plaintext"><code>try{
+    OneApmConfig.setUserName(String userName);//设置用户信息，作为展示的name
+}catch(Throwable throwable){
+    //注意 使用Throwable 来捕获全量异常，
+}
+
+
 </code></pre></div>
 <p>举例:</p>
-<div class="highlight"><pre class="highlight plaintext"><code>OneApmConfig.setUserName(“MyName”);//设置 MyName 为展示name
+<div class="highlight"><pre class="highlight plaintext"><code>try{
+    OneApmConfig.setUserName(“MyName”);//设置 MyName 为展示name
+}catch(Throwable throwable){
+    //注意 使用Throwable 来捕获全量异常，
+}
+
 </code></pre></div>
+<p>注意：
+建议您使用 try catch 包裹代码块<br></p>
+
 <h4>3.1.6 配置变体包（可选）</h4>
 
-<p>如果您有多个渠道需要配置不同的token 那么可以配置不同的变体包来完成各个渠道的配置。</p>
+<p>如果您有多个渠道需要配置不同的 token 那么可以配置不同的变体包来完成各个渠道的配置。</p>
 <div class="highlight"><pre class="highlight plaintext"><code>oneapm {
    defaultConfig {
      oneAPMAppKey '&lt;YourAppToken&gt;'

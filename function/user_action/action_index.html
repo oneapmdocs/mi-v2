@@ -421,6 +421,23 @@
       </div>
     </div>-->
   </div>
+  <div class="panel panel-default">
+   <div class="panel-heading" role="tab" id="headingTwo">
+     <h4 class="panel-title">
+       <a href="/function/Hijacking/Hijacking_index.html " class="collapsed">
+         劫持分析
+       </a>
+     </h4>
+   </div>
+<!--   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+     <div class="panel-body">
+       <ul>
+         <li><a href="/function/event/event_errorInfo.html">错误信息</a></li>
+         <li><a href="/function/event/event_performanceProfiling.html">性能剖析</a></li>
+       </ul>
+     </div>
+   </div>-->
+ </div>
    <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
@@ -512,6 +529,14 @@
           <div class="body-box">
             <h1>事件</h1>
 
+<ul>
+<li><a href="#1">用户事件页面展示</a><br></li>
+<li><a href="#2">多维度分析</a><br></li>
+<li><a href="#3">用户事件列表</a><br></li>
+</ul>
+
+<h2><h2 id="1">用户事件页面展示</h2></h2>
+
 <p>用户事件页面对所有用户事件进行性能分析，包含以下六种类型：</p>
 
 <ul>
@@ -520,30 +545,39 @@
 <li> APP 滑动：使用 Gesture 进行界面跳转触发</li>
 <li> APP 启动：点击 APP Icon 触发该事件</li>
 <li> WebView 加载：WebView 页面加载事件</li>
-<li> WebView 点击：用户点击 WebView 页面控件触发该事件</li>
-</ul>
-
-<h2>用户事件页面展示</h2>
-
-<p><img src="/images/A3-001.jpg" alt="A3 001" />
+<li> WebView 点击：用户点击 WebView 页面控件触发该事件
+<img src="/images/A3-001.jpg" alt="A3 001" />
 响应时间：以面积图的形式展现用户事件响应时间，单位为 ms。
 <img src="/images/A3-002.jpg" alt="A3 002" />
 缓慢事件数 VS 事件总数，以柱状图的形式分别展现缓慢的事件数和非缓慢事件数。
-<img src="/images/A3-003.jpg" alt="A3 003" />
-维度分析：选择某一指标（如缓慢事件数或事件总数），展现该指标在应用版本，地域，联网方式，操作系统，设备五个维度的分布状况，点选任一维度值，可作为过滤条件刷新整个页面的数据，过滤条件可以叠加，进行多维度组合分析。</p>
+<img src="/images/A3-003.jpg" alt="A3 003" /></li>
+</ul>
+
+<h2><h2 id="2">多维度分析</h2></h2>
+
+<p>维度分析：选择某一指标（如缓慢事件数或事件总数），展现该指标在应用版本，地域，联网方式，操作系统，设备五个维度的分布状况，点选任一维度值，可作为过滤条件刷新整个页面的数据，过滤条件可以叠加，进行多维度组合分析。</p>
 
 <p>如点击饼状图中的应用版本“6.10.2”和联网方式“wifi”， 则可以分析“6.10.2 + wifi”条件下的用户动作分布情况。
 <img src="/images/A3-004.jpg" alt="A3 004" /></p>
 
+<h2><h2 id="3">用户事件列表</h2></h2>
+
 <p>用户事件列表：默认按照响应时间排序，显示 top10， 每点击一次显示更多按钮则增加 10 项数据，可以选择不同动作类型过滤用户事件。
 <img src="/images/A3-005.jpg" alt="A3 005" />
 点选某个用户动作，可以把用户动作作为过滤条件，刷新整个界面，如点选“app start”，页面就会展现用户动作为 app start 的响应时间、执行次数，以及该动作在应用版本、地域、联网方式、系统版本、设备上的维度分布。
-<img src="/images/A3-008.jpg" alt="A3 008" />
-点击动作列表的缓慢动作次数，可跳转至用户动作详情，展示该用户动作发生时的基本信息，包括动作耗时、网络请求数、网络慢请求数、是否有 error 、可用运行内存、数据发送量、数据接收量。用户动作的时序图中包含页面交互和网络请求耗时，其中页面交互分为两种： <br>
-1. 页面显示 display XXXactivity ：包含 XXXactivity 从 onCreate（） 方法（对应 iOS 的 viewDidLoad（） 方法）到 onPostResume（）方法（对应 iOS 的 viewDidAppear（）方法）的时长；<br>
-2. 页面重现 redisplay XXXactivity：包含 XXXactivity 从 onStart（）方法（对应 iOS 的 viewWillAppear（） 方法）到 onPostResume（）方法（对应 iOS 的 viewDidAppear（）方法）的时长；<br>
+<img src="/images/A3-008.jpg" alt="A3 008" /></p>
+
+<h3>用户动作详情</h3>
+
+<p>点击动作列表的缓慢动作次数，可跳转至用户动作详情，展示该用户动作发生时的基本信息，包括动作耗时、网络请求数、网络慢请求数、是否有 error 、可用运行内存、数据发送量、数据接收量。
 <img src="/images/A3-006.jpg" alt="A3 006" />
-点击用户访问轨迹可直接回溯到用户动作所属用户轨迹，查看完整用户行为轨迹。<br>
+其中 timeline 的用户动作时序图中包含页面交互和网络请求耗时，其中页面交互分为两种： <br>
+1. 页面显示 display XXXactivity ：包含 XXXactivity 从 onCreate（） 方法（对应 iOS 的 viewDidLoad（） 方法）到 onPostResume（）方法（对应 iOS 的 viewDidAppear（）方法）的时长；<br>
+2. 页面重现 redisplay XXXactivity：包含 XXXactivity 从 onStart（）方法（对应 iOS 的 viewWillAppear（） 方法）到 onPostResume（）方法（对应 iOS 的 viewDidAppear（）方法）的时长；</p>
+
+<h3>用户动作回溯</h3>
+
+<p>点击用户访问轨迹可直接回溯到用户动作所属用户轨迹，查看完整用户行为轨迹。<br>
 用户轨迹中包含了所有用户动作路径，非缓慢的用户动作默认会聚合在“+”中，点击“+”展开用户动作<br></p>
 
 <p><img src="/images/A3-007.jpg" alt="A3 007" /></p>

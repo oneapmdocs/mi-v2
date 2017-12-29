@@ -421,6 +421,23 @@
       </div>
     </div>-->
   </div>
+  <div class="panel panel-default">
+   <div class="panel-heading" role="tab" id="headingTwo">
+     <h4 class="panel-title">
+       <a href="/function/Hijacking/Hijacking_index.html " class="collapsed">
+         劫持分析
+       </a>
+     </h4>
+   </div>
+<!--   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+     <div class="panel-body">
+       <ul>
+         <li><a href="/function/event/event_errorInfo.html">错误信息</a></li>
+         <li><a href="/function/event/event_performanceProfiling.html">性能剖析</a></li>
+       </ul>
+     </div>
+   </div>-->
+ </div>
    <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
@@ -539,11 +556,12 @@
 <li>Response：浏览器收到完整响应耗时；</li>
 <li>Process：Dom 结构构建耗时；</li>
 <li>load：页面渲染耗时。</li>
+<li>pagelading:整个导航及加载过程的时间；</li>
 </ul>
 
-<p>展示页面加载量，缓慢加载与正常加载次数对比：
+<p>展示页面加载次数趋势图，缓慢加载与正常加载次数对比：
 <img src="/images/A9-003.jpg" alt="A9 003" />
-缓慢加载量：页面加载时间超过 1000ms 的加载次数；</p>
+* 缓慢加载量：页面加载时间超过 1000ms 的加载次数；</p>
 
 <h2><h2 id="2">多维度分析</h2></h2>
 
@@ -552,7 +570,7 @@
 
 <h2><h2 id="3">页面加载列表</h2></h2>
 
-<p>页面加载列表展示每一页面加载过程中的页面名称、动作数、加载时间、白屏时间、缓慢次数、加载次数
+<p>页面加载列表展示每一页面加载过程中的页面名称、事件数、加载时间、加载时间分布、白屏时间、缓慢次数、加载次数。
 <img src="/images/A9-005.jpg" alt="A9 005" />
 点击某一页面缓慢次数，可跳转至页面详情页面，展示以下三方面内容：</p>
 
